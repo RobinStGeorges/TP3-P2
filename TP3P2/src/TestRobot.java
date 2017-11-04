@@ -46,6 +46,7 @@ public class TestRobot {
 
 		System.out.println("après passage des robots nettoyeurs");
 		map.affMap();
+		
 
 
 	}
