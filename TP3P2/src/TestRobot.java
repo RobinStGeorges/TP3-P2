@@ -10,28 +10,19 @@ public class TestRobot {
 		//Initialisation de la map
 		map.rempliMap();
 
+		// TEST DES ROBOT POLLUEURS
 
 
 
-		//        //test met papier gras
-		//        map.metPapierGras(0, 0);
-		//        map.metPapierGras(1,1);
-		//        map.metPapierGras(2,2);
-		//        map.metPapierGras(3,3);
-		//        map.metPapierGras(4,4);
-		//        
-		//        //test retire papier gras 
-		//        map.prendPapierGras(1, 1);
-		//        map.prendPapierGras(3, 3);
 
 
 		//Test 2 robots pollueursToutDroit
-		PollueurToutDroit robotPTD=new PollueurToutDroit(map,3);
+		Robot robotPTD=new PollueurToutDroit(map,8);
 
 		robotPTD.parcourir();
 
 		//Test 2 robots pollueursSauteur
-		PollueurSauteur robotPS=new PollueurSauteur(map,1,1);
+		Robot robotPS=new PollueurSauteur(map,3,2);
 
 		robotPS.parcourir();
 
@@ -39,17 +30,31 @@ public class TestRobot {
 
 		System.out.println("après passage des robots pollueurs");
 		map.affMap();
-		
-		RobotNettoyeur robotN = new RobotNettoyeur(map);
-		
-		robotN.parcourir();
 
-		System.out.println("après passage des robots nettoyeurs");
+		// TEST DES ROBOTS NOTTOYEURS
+
+		//PASSAGE ROBOT NETTOYEUR DISTRAIT
+
+		Robot robotND = new NettoyeurDistrait(map);
+
+		robotND.parcourir();
+
+		System.out.println("après passage du robot nettoyeur distrait");
 		map.affMap();
 		
+		//PASSAGE ROBOT NETTOYEUR
+
+		Robot robotN = new RobotNettoyeur(map);
+
+		robotN.parcourir();
+
+		System.out.println("après passage du robot nettoyeur ");
+		map.affMap();
+
+
 
 
 	}
-	
+
 
 }
